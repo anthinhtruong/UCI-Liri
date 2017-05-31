@@ -1,5 +1,6 @@
 var key = require("./key.js")
 var fs = require('fs');
+var Twitter = require("twitter")
 var spotify = require("spotify")
 var request = require("request")
 
@@ -15,10 +16,12 @@ else if (process.argv[2] === "spotify-this-song"){
 }
 
 //Twitter
+
+
 function mahTweeting(){
 // if (process.argv[2] === "my-tweets"){
 
-    var user = key.twitterKeys;
+    var user = new Twitter(key.twitterKeys);
     // console.log(user)
     var params = {screen_name: 'anaa_truong'};
 
